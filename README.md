@@ -4,6 +4,10 @@ A small Python command-line tool that scans CI/build logs and reports the first 
 
 It is useful when a build log is long and noisy: warnings, notes, summaries, and repeated downstream failures can hide the original error. This tool scans from the top, skips common noise, matches known failure patterns, and prints a structured result that is easy to read, export as JSON, or save as an HTML report.
 
+## HTML Report Preview
+
+![HTML Report Preview](assets/html-report-dashboard.png)
+
 ## Architecture
 
 ```text
