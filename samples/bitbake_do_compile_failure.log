@@ -1,0 +1,11 @@
+NOTE: Running task 1842 of 2461 (/workspace/poky/meta-demo/recipes-platform/platform-service/platform-service_1.4.bb:do_compile)
+DEBUG: Executing shell function do_compile
+make[1]: Entering directory '/workspace/build/tmp/work/core2-64-poky-linux/platform-service/1.4-r0/build'
+ccache x86_64-poky-linux-g++ -Iinclude -c src/diagnostics.cpp
+src/diagnostics.cpp:18:10: fatal error: platform/DiagTransport.hpp: No such file or directory
+   18 | #include <platform/DiagTransport.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [Makefile:42: diagnostics.o] Error 1
+ERROR: platform-service-1.4-r0 do_compile: oe_runmake failed
+ERROR: Task (/workspace/poky/meta-demo/recipes-platform/platform-service/platform-service_1.4.bb:do_compile) failed with exit code '1'

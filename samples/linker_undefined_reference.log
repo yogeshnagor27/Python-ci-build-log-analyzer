@@ -1,0 +1,6 @@
+[42/44] Building CXX object src/CMakeFiles/platform_app.dir/main.cpp.o
+[43/44] Linking CXX executable platform_app
+/usr/bin/ld: CMakeFiles/platform_app.dir/main.cpp.o: in function `main':
+main.cpp:(.text+0x35): undefined reference to `diagnostics::SessionManager::start()'
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.

@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "python-ci-build-log-analyzer"
+version = "0.2.0"
+description = "Find the first real error in CMake, BitBake/Yocto, Jenkins and GitHub Actions build logs."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  { name = "Yogesh Nagor" }
+]
+keywords = ["python", "ci", "cmake", "bitbake", "yocto", "jenkins", "github-actions", "build-logs"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Operating System :: POSIX :: Linux",
+  "Topic :: Software Development :: Build Tools",
+  "Topic :: Software Development :: Quality Assurance",
+]
+
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+ci-log-analyzer = "ci_log_analyzer.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

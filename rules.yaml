@@ -1,0 +1,15 @@
+# Optional custom rules for project/team-specific log patterns.
+# The analyzer can load this file with:
+#   ci-log-analyzer build.log --rules rules.yaml
+
+rules:
+  - name: custom-platform-error
+    pattern: "CUSTOM_PLATFORM_ERROR_[0-9]+"
+    category: platform_specific_failure
+    root_cause_area: Platform integration
+    source: Custom CI
+    confidence: 0.91
+    suggested_steps:
+      - "Open the platform integration log for the module that printed the custom error code."
+      - "Check the failing component version, configuration, and environment variables."
+      - "Add a more specific rule once the exact root cause is understood."

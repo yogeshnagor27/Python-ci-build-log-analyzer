@@ -1,0 +1,77 @@
+# Sample Demo Output
+
+## Summary table
+```text
+CI Log Analyzer - Summary
+============================================================================
+Analyzed: 11 log file(s) | Failed: 10 | OK/Unknown: 1
+Showing: failed files only (10 item(s))
+
+ #  Status     Source           Line  Category                 File
+-------------------------------------------------------------------
+ 1  FAIL       Compiler            5  compilation_error        samples/bitbake_do_compile_failure.log
+ 2  FAIL       BitBake/Yocto       4  source_fetch_failure     samples/bitbake_do_fetch_failure.log
+ 3  FAIL       BitBake/Yocto      10  bitbake_recipe_failure   samples/bitbake_recipe_failure.log
+ 4  FAIL       CMake               3  configuration_failure    samples/cmake_generator_toolchain_failure.log
+ 5  FAIL       CMake               8  configuration_failure    samples/cmake_missing_dependency.log
+ 6  FAIL       Compiler            3  compilation_error        samples/compiler_missing_header.log
+ 7  FAIL       Unknown             4  generic_error            samples/custom_platform_error.log
+ 8  FAIL       Test runner         8  failed_test_stage        samples/github_actions_pytest_failure.log
+ 9  FAIL       Linux/CI shell      8  permission_issue         samples/jenkins_permission_denied.log
+10  FAIL       Linker              4  linker_error             samples/linker_undefined_reference.log
+
+Tip: run a single log path for full details, or add --details for detailed blocks.
+```
+
+## Single log detail
+```text
+CI Log Analyzer - Result
+============================================================================
+File        : samples/linker_undefined_reference.log
+Status      : FAIL
+Source      : Linker
+Category    : linker_error
+Area        : Linking/library resolution
+Confidence  : 0.88
+Line        : 4
+First error :
+  main.cpp:(.text+0x35): undefined reference to `diagnostics::SessionManager::start()'
+Rule        : linker-error
+
+Next steps
+----------------------------------------------------------------------------
+1. Check target_link_libraries/order of libraries and missing transitive dependencies.
+2. Verify that required libraries are built for the correct architecture/toolchain.
+3. Inspect CI artifact paths and linker search paths.
+
+Tip: add --show-context to see nearby log lines around the error.
+```
+
+## Custom rules.yaml example
+```text
+CI Log Analyzer - Result
+============================================================================
+File        : samples/custom_platform_error.log
+Status      : FAIL
+Source      : Custom CI
+Category    : platform_specific_failure
+Area        : Platform integration
+Confidence  : 0.91
+Line        : 3
+First error :
+  CUSTOM_PLATFORM_ERROR_1042: manifest signature is missing for component telemetry-agent
+Rule        : custom-platform-error
+
+Next steps
+----------------------------------------------------------------------------
+1. Open the platform integration log for the module that printed the custom error code.
+2. Check the failing component version, configuration, and environment variables.
+3. Add a more specific rule once the exact root cause is understood.
+
+Tip: add --show-context to see nearby log lines around the error.
+```
+
+## HTML report command
+```bash
+python3 -m ci_log_analyzer samples/ --html-report reports/report.html
+```

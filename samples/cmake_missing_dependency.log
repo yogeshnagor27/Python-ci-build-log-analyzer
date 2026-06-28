@@ -1,0 +1,18 @@
+[  1%] Building CXX object src/CMakeFiles/platform_app.dir/main.cpp.o
+warning: 'LegacyPlatformApi' is deprecated
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting CXX compile features - done
+-- Looking for pthread.h - found
+-- Checking for module 'SomeDeprecatedPackage'
+CMake Error at CMakeLists.txt:22 (find_package):
+  Could not find a package configuration file provided by "PlatformDiagnostics"
+  with any of the following names:
+
+    PlatformDiagnosticsConfig.cmake
+    platformdiagnostics-config.cmake
+
+  Add the installation prefix of "PlatformDiagnostics" to CMAKE_PREFIX_PATH or
+  set "PlatformDiagnostics_DIR" to a directory containing one of the above files.
+
+-- Configuring incomplete, errors occurred!

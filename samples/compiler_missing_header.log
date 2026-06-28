@@ -1,0 +1,7 @@
+[35/188] Building CXX object services/CMakeFiles/diagnostics.dir/DiagnosticClient.cpp.o
+In file included from /workspace/services/DiagnosticClient.cpp:12:
+/workspace/services/DiagnosticClient.hpp:8:10: fatal error: platform/DiagTransport.hpp: No such file or directory
+    8 | #include <platform/DiagTransport.hpp>
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+ninja: build stopped: subcommand failed.

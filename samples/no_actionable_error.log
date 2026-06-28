@@ -1,0 +1,5 @@
+[ 10%] Building target common
+warning: deprecated API used in compatibility layer
+note: this warning is expected for legacy hardware variant
+[100%] Build completed
+0 errors, 1 warning

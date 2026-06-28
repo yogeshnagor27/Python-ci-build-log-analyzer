@@ -1,0 +1,4 @@
+[INFO] Starting custom integration checks
+[INFO] Checking generated manifest
+CUSTOM_PLATFORM_ERROR_1042: manifest signature is missing for component telemetry-agent
+[ERROR] integration check failed

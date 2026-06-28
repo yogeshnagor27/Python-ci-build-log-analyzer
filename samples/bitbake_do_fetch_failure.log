@@ -1,0 +1,6 @@
+NOTE: Running task 382 of 2461 (/workspace/poky/meta-demo/recipes-connectivity/telemetry/telemetry-agent_2.1.bb:do_fetch)
+DEBUG: Executing python function do_fetch
+WARNING: telemetry-agent-2.1-r0 do_fetch: Failed to fetch URL git://example.invalid/telemetry-agent.git;branch=main, attempting MIRRORS if available
+ERROR: telemetry-agent-2.1-r0 do_fetch: Fetcher failure: Unable to fetch URL from any source.
+ERROR: Logfile of failure stored in: /workspace/build/tmp/work/core2-64-poky-linux/telemetry-agent/2.1-r0/temp/log.do_fetch.23842
+ERROR: Task (/workspace/poky/meta-demo/recipes-connectivity/telemetry/telemetry-agent_2.1.bb:do_fetch) failed with exit code '1'

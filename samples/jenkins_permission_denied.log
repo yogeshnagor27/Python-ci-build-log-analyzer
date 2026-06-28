@@ -1,0 +1,12 @@
+Started by user integration-bot
+Running as SYSTEM
+Building remotely on linux-agent-12 in workspace /var/lib/jenkins/workspace/platform-nightly
+[Pipeline] sh
++ ./scripts/package_release.sh
+warning: using cached SDK from previous build
++ mkdir -p /opt/releases/platform
+mkdir: cannot create directory '/opt/releases/platform': Permission denied
+script returned exit code 1
+[Pipeline] }
+[Pipeline] // stage
+Finished: FAILURE

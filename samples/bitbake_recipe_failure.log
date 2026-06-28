@@ -1,0 +1,12 @@
+Loading cache: 100% |################################################################| Time: 0:00:01
+Loaded 4123 entries from dependency cache.
+Parsing recipes: 100% |############################################################| Time: 0:00:02
+NOTE: Resolving any missing task queue dependencies
+NOTE: Multiple providers are available for runtime libplatform-ipc
+NOTE: Runtime target platform-image is buildable
+WARNING: /layers/meta-demo/recipes-platform/platform-service/platform-service_1.4.bb: QA Issue: package contains debug paths
+Initialising tasks: 100% |#########################################################| Time: 0:00:01
+Sstate summary: Wanted 39 Found 32 Missed 7 Current 499
+ERROR: platform-service-1.4-r0 do_compile: oe_runmake failed
+ERROR: Task (/layers/meta-demo/recipes-platform/platform-service/platform-service_1.4.bb:do_compile) failed with exit code '1'
+ERROR: Logfile of failure stored in: /build/tmp/work/core2-64-poky-linux/platform-service/1.4-r0/temp/log.do_compile.84531

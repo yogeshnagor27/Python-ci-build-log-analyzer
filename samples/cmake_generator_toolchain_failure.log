@@ -1,0 +1,10 @@
+-- The C compiler identification is unknown
+-- The CXX compiler identification is unknown
+CMake Error at CMakeLists.txt:3 (project):
+  The CMAKE_C_COMPILER:
+
+    arm-none-eabi-gcc
+
+  is not a full path and was not found in the PATH.
+
+Configuring incomplete, errors occurred!

@@ -1,0 +1,35 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install package
+        run: pip install -e .
+
+      - name: Run unit tests
+        run: python -m unittest discover -s tests
+
+      - name: Analyze sample logs
+        run: ci-log-analyzer samples/ --format json
+
+      - name: Generate HTML report
+        run: ci-log-analyzer samples/ --html-report report.html
+
+      - name: Test custom YAML rules
+        run: ci-log-analyzer samples/custom_platform_error.log --rules rules.yaml
